@@ -39,9 +39,6 @@ public final class GeneratorUtils {
     public static boolean deleteDir(File dir) {
         if (dir.isDirectory()) {
             String[] children = dir.list();
-            if (children == null) {
-                return dir.delete();
-            }
             //递归删除目录中的子目录下
             for (String aChildren : children) {
                 boolean success = deleteDir(new File(dir, aChildren));
